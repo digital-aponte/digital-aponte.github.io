@@ -9,26 +9,25 @@ Two Test Cases](https://thisismattmiller.com/post/repotting-old-digital-humaniti
 
 ## Prerequisites
 - [Homebrew](https://brew.sh/)
-- [Httrack](https://www.httrack.com/) (install with `$ brew install httrack`)
+- [Wget](https://www.gnu.org/software/wget/) (install with `$ brew install wget`)
 - [Html-Tidy](http://www.html-tidy.org/) (install with `$ brew install tidy-html5`)
-- [Ruby >= 2.4](https://rvm.io/rvm/install) with [bundler](https://bundler.io/#getting-started)
+- [Ruby via RVM](https://rvm.io/rvm/install)
 
 ## Instructions
 ### 1. __Setup__
   - [Create a new repo from this template](https://github.com/nyu-dss/repotting-template/generate). The new repo name should be "\<projectname\>-repotted"
   - Clone the repo to your local machine, cd into it, then run `$ bundle install`
 ### 2. __Copy__
-  - Copy the site using httrack. the command is
-  `$ httrack --verbose --clean <url> -O docs`, where `<url>` is the full, publicly accessible URL to the website you want to copy. `./docs` is where the copied site will go. (Note: do not add trailing slash in URL)
+  - Copy the site using wget. the command is
+  `$ wget -r -E -k -p -np -nc --random-wait <url>`, where `<url>` is the full, publicly accessible URL to the website you want to copy.
 ### 3. __Clean up__
-  - Httrack unfortunately adds extra files and unnecessary hierarchies. To clean it up, open the newly generated `docs` directory and delete `hts-cache`, `blackblue.gif`, `fade.gif`, and `index.html`.
-  - Depending on the structure of your "old pot" URL, you'll have a series of hierarchical folders mirroring the structure of the URL. (e.g., `www`, `nyu.edu`, `projects`, etc.) Find the lowermost folder with all the site files and copy them directly into `./src`. Then delete the empty directories left over.
+  - Wget should have created a folder with the same name as your url. Rename it `docs`.
 ### 4. __Check links__
-  - Run `$ ruby lib/check-links.rb src`. This will flag any broken links _within_ the site (not externally). Totally up to you what to do with this information / whether or not to fix it!
+  - Run `$ bundle exec ruby lib/check-links.rb docs`. This will flag any broken links _within_ the site (not externally). Totally up to you what to do with this information / whether or not to fix it!
 ### 5. __Check html__
-  - Run `$ ruby lib/check-html.rb src`. This will flag any HTML errors within the copied site. If there are no major errors, feel free to skip to Step 7.
+  - Run `$ bundle exec ruby lib/check-html.rb docs`. This will flag any HTML errors within the copied site. If there are no major errors, feel free to skip to Step 7.
 ### 6. __Tidy html__
-  - Run `$ ruby lib/tidy-html.rb src`. This will attempt to automatically "tidy" some HTML errors. You can check the HTML again using `$ ruby lib/check-html.rb src` to see if tidying worked. Again, totally up to you what to do with this information / whether or not to fix it!
+  - Run `$ bundle exec ruby lib/tidy-html.rb sdocs`. This will attempt to automatically "tidy" some HTML errors. You can check the HTML again using `$ bundle exec ruby lib/check-html.rb docs` to see if tidying worked. Again, totally up to you what to do with this information / whether or not to fix it!
 ### 7. __Finish__
   - When you're done copying and tidying, rename this `README.md` file to `instructions.md`
   - Next, fill out the `README-template.md` and rename it to `README.md`
