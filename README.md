@@ -5,7 +5,7 @@ __site name:__
 Digital Aponte
 
 __"old pot" url:__   
-https://aponte.hosting.nyu.edu/
+aponte.hosting.nyu.edu
 
 __"new pot" url:__  
   
