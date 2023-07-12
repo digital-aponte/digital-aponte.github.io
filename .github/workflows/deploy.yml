@@ -13,8 +13,8 @@ jobs:
       - name: deploy
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: aponte.marii.hosting.nyu.edu
-          username: ${{secrets.FTP_USERNAME}}@aponte.marii.hosting.nyu.edu
+          server: marii.hosting.nyu.edu
+          username: ${{secrets.FTP_USERNAME}}@marii.hosting.nyu.edu
           password: ${{secrets.FTP_PASSWORD}}
           protocol: ftps
           state-name: ./.ftp-deploy-sync-state.json
