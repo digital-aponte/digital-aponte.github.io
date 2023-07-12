@@ -16,4 +16,6 @@ jobs:
           server: aponte.marii.hosting.nyu.edu
           username: ${{secrets.FTP_USERNAME}}@aponte.marii.hosting.nyu.edu
           password: ${{secrets.FTP_PASSWORD}}
+          protocol: ftps
+          state-name: ./.ftp-deploy-sync-state.json
           local-dir: ./docs/
