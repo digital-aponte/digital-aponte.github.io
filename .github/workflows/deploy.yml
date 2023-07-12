@@ -1,0 +1,19 @@
+name: ci:deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: deploy
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: aponte.marii.hosting.nyu.edu
+          username: ${{secrets.FTP_USERNAME}}@aponte.marii.hosting.nyu.edu
+          password: ${{secrets.FTP_PASSWORD}}
+          local-dir: ./docs/
