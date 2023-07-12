@@ -18,5 +18,5 @@ jobs:
           password: ${{secrets.FTP_PASSWORD}}
           protocol: ftps
           state-name: ./.ftp-deploy-sync-state.json
-          security: loose
+          security: strict
           local-dir: ./docs/
