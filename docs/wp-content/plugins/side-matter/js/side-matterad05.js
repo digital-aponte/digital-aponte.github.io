@@ -4,7 +4,7 @@ Version 1.4
 
 Plugin: Side Matter
 Author: Christopher Setzer
-URI: https://wordpress.org/extend/plugins/side-matter/
+URI: http://wordpress.org/extend/plugins/side-matter/
 License: GPLv2
 */
 

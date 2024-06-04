@@ -9,7 +9,7 @@ Template:       tribute
 
 /*
 .main-header 
-{ background-image: url("/wp-content/uploads/2016/07/cropped-July-15-header.jpg");
+{ background-image: url("http://aponte.hosting.nyu.edu/wp-content/uploads/2016/07/cropped-July-15-header.jpg");
   width: 1375px;
   height: 185px;
   position: relative; }
