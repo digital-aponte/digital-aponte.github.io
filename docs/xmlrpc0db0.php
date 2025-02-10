@@ -2,13 +2,13 @@
 	<service>
 		<engineName>WordPress</engineName>
 		<engineLink>https://wordpress.org/</engineLink>
-		<homePageLink>https://aponte.hosting.nyu.edu</homePageLink>
+		<homePageLink>https://digital-aponte.github.io</homePageLink>
 		<apis>
-			<api name="WordPress" blogID="1" preferred="true" apiLink="https://aponte.hosting.nyu.edu/xmlrpc.php" />
-			<api name="Movable Type" blogID="1" preferred="false" apiLink="https://aponte.hosting.nyu.edu/xmlrpc.php" />
-			<api name="MetaWeblog" blogID="1" preferred="false" apiLink="https://aponte.hosting.nyu.edu/xmlrpc.php" />
-			<api name="Blogger" blogID="1" preferred="false" apiLink="https://aponte.hosting.nyu.edu/xmlrpc.php" />
-				<api name="WP-API" blogID="1" preferred="false" apiLink="https://aponte.hosting.nyu.edu/wp-json/" />
+			<api name="WordPress" blogID="1" preferred="true" apiLink="https://digital-aponte.github.io/xmlrpc.php" />
+			<api name="Movable Type" blogID="1" preferred="false" apiLink="https://digital-aponte.github.io/xmlrpc.php" />
+			<api name="MetaWeblog" blogID="1" preferred="false" apiLink="https://digital-aponte.github.io/xmlrpc.php" />
+			<api name="Blogger" blogID="1" preferred="false" apiLink="https://digital-aponte.github.io/xmlrpc.php" />
+				<api name="WP-API" blogID="1" preferred="false" apiLink="https://digital-aponte.github.io/wp-json/" />
 			</apis>
 	</service>
 </rsd>
