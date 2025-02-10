@@ -1,14 +1,10 @@
 require 'html-proofer'
 
-dir = ARGV[0]
-
 opts = {
-  allow_missing_href: true,
-  root_dir: "#{Dir.pwd}/#{dir}",
-  disable_external: true,
-  allow_hash_href: true,
+  checks: ['Links', 'Scripts', 'Images'],
   ignore_empty_alt: true,
-  ignore_missing_alt: true
+  ignore_missing_alt: true,
+  enforce_https: true
 }
 
-HTMLProofer.check_directory(dir, opts).run
+HTMLProofer.check_directory(ARGV[0], opts).run
